@@ -1,0 +1,4814 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 29,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 8,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 24,
+            "x": 0,
+            "y": 58
+          },
+          "id": 2,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "carvel_packagerepository_info{namespace=\"tanzu-package-repo-global\",type=\"ReconcileSucceeded\",status=\"True\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{oci_image}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Package Repositories",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "name": false,
+                  "namespace": true,
+                  "pod": true,
+                  "service": true,
+                  "status": false,
+                  "type": true
+                },
+                "indexByName": {},
+                "renameByName": {}
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 62
+          },
+          "id": 1,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "frameIndex": 37,
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "builder",
+              "exemplar": false,
+              "expr": "carvel_packageinstall_info{namespace=\"tap-install\",type=\"ReconcileSucceeded\",status=\"True\"}",
+              "format": "table",
+              "instant": true,
+              "interval": "",
+              "legendFormat": "{{package_name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "TAP Package Installs",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {},
+                "renameByName": {}
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 24,
+            "x": 0,
+            "y": 72
+          },
+          "id": 4,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "carvel_app_namespaces{namespace=\"tap-namespace-provisioning\",name=\"provisioner\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{namespaces_deployed_to}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Developer Namespaces",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true
+                },
+                "indexByName": {
+                  "Time": 11,
+                  "Value": 14,
+                  "__name__": 0,
+                  "container": 1,
+                  "customresource_group": 2,
+                  "customresource_kind": 3,
+                  "customresource_version": 4,
+                  "endpoint": 5,
+                  "instance": 6,
+                  "job": 7,
+                  "name": 9,
+                  "namespace": 10,
+                  "namespaces_deployed_to": 8,
+                  "pod": 12,
+                  "service": 13
+                },
+                "renameByName": {
+                  "Time": "Last Reconcile",
+                  "name": "Namespace Provisioner App",
+                  "namespace": "Management Namespace",
+                  "namespaces_deployed_to": "Developer Namespaces"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "title": "TAP Infrastructure Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 9,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 59
+          },
+          "id": 6,
+          "options": {
+            "displayMode": "gradient",
+            "minVizHeight": 10,
+            "minVizWidth": 0,
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true,
+            "valueMode": "color"
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "count by (id) (topk(1000, count by (id, workload) (kpack_build_involved_buildpacks)))",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Number of Workloads Using Each Buildpack",
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 67
+          },
+          "id": 31,
+          "options": {
+            "displayMode": "gradient",
+            "minVizHeight": 10,
+            "minVizWidth": 0,
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true,
+            "valueMode": "color"
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (workload) (kpack_build_status{status=\"True\", type=\"Succeeded\"})",
+              "format": "table",
+              "instant": false,
+              "legendFormat": "{{workload}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Successful Builds Per Workload",
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 75
+          },
+          "id": 7,
+          "options": {
+            "displayMode": "gradient",
+            "minVizHeight": 10,
+            "minVizWidth": 0,
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true,
+            "valueMode": "color"
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (workload) (kpack_build_status{status=\"Failed\", type=\"Succeeded\"})",
+              "format": "table",
+              "instant": false,
+              "legendFormat": "{{workload}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Failed Builds Per Workload",
+          "type": "bargauge"
+        }
+      ],
+      "title": "Tanzu Build Service Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 20,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 165
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Last Transition Timestamp"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 253
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Condition"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 203
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Workload Name"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 323
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 18
+          },
+          "id": 13,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "cartographer_workload_status{type=\"SupplyChainReady\",status=\"False\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "__auto",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Workloads Without A Matching Supply Chain",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "has_tests": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": false,
+                  "message": false,
+                  "pod": true,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 0,
+                  "Value": 17,
+                  "__name__": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "instance": 7,
+                  "job": 8,
+                  "last_transition_ime": 13,
+                  "name": 10,
+                  "namespace": 11,
+                  "pod": 12,
+                  "reason": 14,
+                  "service": 15,
+                  "status": 9,
+                  "type": 16
+                },
+                "renameByName": {
+                  "Value": "",
+                  "last_transition_ime": "Last Transition Timestamp",
+                  "message": "Message",
+                  "name": "Workload Name",
+                  "namespace": "Namespace",
+                  "pod": "",
+                  "reason": "Condition",
+                  "type": "Failure"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Reason"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 250
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Message"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 1106
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 126
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "name"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 182
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 26
+          },
+          "id": 14,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "cartographer_workload_status{type=\"Ready\",status=\"False\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Workloads in a Failed State",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": false,
+                  "pod": true,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 0,
+                  "Value": 17,
+                  "__name__": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "instance": 7,
+                  "job": 8,
+                  "last_transition_ime": 18,
+                  "message": 16,
+                  "name": 9,
+                  "namespace": 10,
+                  "pod": 11,
+                  "reason": 15,
+                  "service": 12,
+                  "status": 13,
+                  "type": 14
+                },
+                "renameByName": {
+                  "last_transition_ime": "Last Sync Time",
+                  "message": "Message",
+                  "reason": "Failure Reason",
+                  "type": ""
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 6,
+            "x": 0,
+            "y": 34
+          },
+          "id": 15,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (workload) (knative_service_info unless ignoring(dst) (label_replace(knative_service_info, \"dst\", \"$1\", \"latest_created_revision\", \"(.*)\") == label_replace(knative_service_info, \"dst\", \"$1\", \"latest_ready_revision\", \"(.*)\")))",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "__auto",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Workloads with Latest Revision Not Ready",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {}
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 18,
+            "x": 6,
+            "y": 34
+          },
+          "id": 10,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xField": "type",
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (type) (cartographer_workload_info)",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{type}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Number of Workloads Per Workload Type",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 42
+          },
+          "id": 11,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (supply_chain) (cartographer_workload_info)",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{type}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Number of Workloads Per Supply Chain",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "Value #A"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Value #A"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Git Sourced Workloads"
+                  },
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-blue",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Value #B"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "OCI Sourced Workloads"
+                  },
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-red",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 42
+          },
+          "id": 12,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "right",
+              "showLegend": true,
+              "sortBy": "Name",
+              "sortDesc": true
+            },
+            "orientation": "horizontal",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xField": "Time",
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": -200
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "disableTextWrap": false,
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count(cartographer_workload_info{source_image=\"\"})",
+              "format": "table",
+              "fullMetaSearch": false,
+              "includeNullMetadata": true,
+              "instant": true,
+              "interval": "",
+              "legendFormat": "__auto",
+              "range": false,
+              "refId": "A",
+              "useBackend": false
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "count(cartographer_workload_info{source_git_url=\"\"})",
+              "format": "table",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Number of Workloads Per Source Type",
+          "transformations": [],
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 50
+          },
+          "id": 17,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": " cartographer_workload_info{live_update_enabled=\"true\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Workloads With Live Update Enabled",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "created_at": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 16,
+                  "Value": 18,
+                  "__name__": 0,
+                  "container": 1,
+                  "created_at": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "instance": 7,
+                  "job": 8,
+                  "name": 9,
+                  "namespace": 10,
+                  "pod": 11,
+                  "service": 12,
+                  "source_git_branch": 14,
+                  "source_git_url": 13,
+                  "supply_chain": 15,
+                  "type": 17
+                },
+                "renameByName": {
+                  "Time": "Last Data Collected",
+                  "name": "Workload",
+                  "namespace": "Namespace",
+                  "source_git_branch": "Git Branch",
+                  "source_git_url": "Git Source URL",
+                  "supply_chain": "Matched Supply Chain"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 50
+          },
+          "id": 16,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": " (cartographer_workload_info{live_update_enabled=\"false\"} or cartographer_workload_info{live_update_enabled=\"\"})",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Workloads Without Live Update Enabled",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "created_at": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 16,
+                  "Value": 18,
+                  "__name__": 0,
+                  "container": 1,
+                  "created_at": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "instance": 7,
+                  "job": 8,
+                  "name": 9,
+                  "namespace": 10,
+                  "pod": 11,
+                  "service": 12,
+                  "source_git_branch": 14,
+                  "source_git_url": 13,
+                  "supply_chain": 15,
+                  "type": 17
+                },
+                "renameByName": {
+                  "Time": "Last Data Collected",
+                  "name": "Workload",
+                  "namespace": "Namespace",
+                  "source_git_branch": "Git Branch",
+                  "source_git_url": "Git Source URL",
+                  "supply_chain": "Matched Supply Chain"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 58
+          },
+          "id": 19,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "cartographer_workload_info{debug_enabled=\"true\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Workloads With Remote Debug Enabled",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "created_at": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 18,
+                  "Value": 17,
+                  "__name__": 0,
+                  "container": 1,
+                  "created_at": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "instance": 7,
+                  "job": 8,
+                  "name": 9,
+                  "namespace": 10,
+                  "pod": 11,
+                  "service": 12,
+                  "source_git_branch": 15,
+                  "source_git_url": 14,
+                  "supply_chain": 13,
+                  "type": 16
+                },
+                "renameByName": {
+                  "Time": "Last Data Collected",
+                  "name": "Workload",
+                  "namespace": "Namespace",
+                  "source_git_branch": "Git Branch",
+                  "source_git_url": "Source Git URL",
+                  "supply_chain": "Matched Supply Chain"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 58
+          },
+          "id": 18,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "cartographer_workload_info{debug_enabled=\"false\"} or cartographer_workload_info{debug_enabled=\"\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Workloads Without Remote Debug Enabled",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "created_at": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 18,
+                  "Value": 17,
+                  "__name__": 0,
+                  "container": 1,
+                  "created_at": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "instance": 7,
+                  "job": 8,
+                  "name": 9,
+                  "namespace": 10,
+                  "pod": 11,
+                  "service": 12,
+                  "source_git_branch": 15,
+                  "source_git_url": 14,
+                  "supply_chain": 13,
+                  "type": 16
+                },
+                "renameByName": {
+                  "Time": "Last Data Collected",
+                  "name": "Workload",
+                  "namespace": "Namespace",
+                  "source_git_branch": "Git Branch",
+                  "source_git_url": "Source Git URL",
+                  "supply_chain": "Matched Supply Chain"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "title": "Workload Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 25,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Source Object Type"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 231
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Workload"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 308
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 339
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 100
+          },
+          "id": 21,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "flux_git_repository_status{type=\"Ready\",owner_type=\"Workload\",component=\"source\",status=\"True\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Successful Code Source Retriever Per Workload",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "component": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": false,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": true,
+                  "name": true,
+                  "owner": true,
+                  "owner_type": true,
+                  "pod": true,
+                  "reason": true,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 22,
+                  "Value": 20,
+                  "__name__": 0,
+                  "component": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 12,
+                  "customresource_version": 4,
+                  "endpoint": 5,
+                  "instance": 6,
+                  "job": 7,
+                  "last_transition_ime": 8,
+                  "message": 21,
+                  "name": 10,
+                  "namespace": 11,
+                  "owner": 13,
+                  "owner_type": 14,
+                  "pod": 15,
+                  "reason": 16,
+                  "service": 17,
+                  "status": 18,
+                  "type": 19,
+                  "workload": 9
+                },
+                "renameByName": {
+                  "Time": "Last Sync Time",
+                  "customresource_kind": "Source Object Type",
+                  "message": "Message",
+                  "name": "",
+                  "namespace": "Namespace",
+                  "workload": "Workload"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 143
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Source Object Type"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 186
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Last Sync Time"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 197
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Workload"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 292
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Failure Reason"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 180
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 108
+          },
+          "id": 24,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "flux_git_repository_status{type=\"Ready\",owner_type=\"Workload\",component=\"source\",status=\"False\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Failed Source Code Retriever Per Workload",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "component": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": false,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": true,
+                  "name": true,
+                  "owner": true,
+                  "owner_type": true,
+                  "pod": true,
+                  "reason": false,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 15,
+                  "Value": 21,
+                  "__name__": 0,
+                  "component": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 12,
+                  "customresource_version": 4,
+                  "endpoint": 5,
+                  "instance": 6,
+                  "job": 7,
+                  "last_transition_ime": 8,
+                  "message": 22,
+                  "name": 10,
+                  "namespace": 11,
+                  "owner": 13,
+                  "owner_type": 14,
+                  "pod": 16,
+                  "reason": 17,
+                  "service": 18,
+                  "status": 19,
+                  "type": 20,
+                  "workload": 9
+                },
+                "renameByName": {
+                  "Time": "Last Sync Time",
+                  "customresource_kind": "Source Object Type",
+                  "message": "Message",
+                  "name": "",
+                  "namespace": "Namespace",
+                  "reason": "Failure Reason",
+                  "workload": "Workload"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Source Object Type"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 231
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Workload"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 308
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 339
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 116
+          },
+          "id": 23,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "flux_git_repository_status{type=\"Ready\",owner_type=\"Deliverable\",component=\"source\",status=\"True\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Successful Delivery.yml Retriever Per Deliverable",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "component": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": false,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": true,
+                  "name": true,
+                  "owner": true,
+                  "owner_type": true,
+                  "pod": true,
+                  "reason": true,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 22,
+                  "Value": 20,
+                  "__name__": 0,
+                  "component": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 12,
+                  "customresource_version": 4,
+                  "endpoint": 5,
+                  "instance": 6,
+                  "job": 7,
+                  "last_transition_ime": 8,
+                  "message": 21,
+                  "name": 10,
+                  "namespace": 11,
+                  "owner": 13,
+                  "owner_type": 14,
+                  "pod": 15,
+                  "reason": 16,
+                  "service": 17,
+                  "status": 18,
+                  "type": 19,
+                  "workload": 9
+                },
+                "renameByName": {
+                  "Time": "Last Sync Time",
+                  "customresource_kind": "Source Object Type",
+                  "message": "Message",
+                  "name": "",
+                  "namespace": "Namespace",
+                  "workload": "Workload"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 143
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Source Object Type"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 186
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Last Sync Time"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 197
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Workload"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 292
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Failure Reason"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 180
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 124
+          },
+          "id": 22,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "flux_git_repository_status{type=\"Ready\",owner_type=\"Deliverable\",component=\"source\",status=\"False\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Failed Delivery.yml Retriever Per Deliverable",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "component": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": false,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": true,
+                  "name": true,
+                  "owner": true,
+                  "owner_type": true,
+                  "pod": true,
+                  "reason": false,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 15,
+                  "Value": 21,
+                  "__name__": 0,
+                  "component": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 12,
+                  "customresource_version": 4,
+                  "endpoint": 5,
+                  "instance": 6,
+                  "job": 7,
+                  "last_transition_ime": 8,
+                  "message": 22,
+                  "name": 10,
+                  "namespace": 11,
+                  "owner": 13,
+                  "owner_type": 14,
+                  "pod": 16,
+                  "reason": 17,
+                  "service": 18,
+                  "status": 19,
+                  "type": 20,
+                  "workload": 9
+                },
+                "renameByName": {
+                  "Time": "Last Sync Time",
+                  "customresource_kind": "Source Object Type",
+                  "message": "Message",
+                  "name": "",
+                  "namespace": "Namespace",
+                  "reason": "Failure Reason",
+                  "workload": "Workload"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "title": "Source Controller Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 30,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 85
+          },
+          "id": 26,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (workload) (tekton_pipeline_run_status{type=\"Succeeded\",status=\"True\"})",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Successful Testing Pipeline Runs Per Workload",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 85
+          },
+          "id": 27,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (workload) (tekton_pipeline_run_status{type=\"Succeeded\",status=\"False\"})",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Failed Testing Pipeline Runs Per Workload",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisGridShow": true,
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 93
+          },
+          "id": 28,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "horizontal",
+            "showValue": "always",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xField": "Time",
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 200
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (workload) (tekton_task_run_status{component=\"config-writer\",type=\"Succeeded\",status=\"True\"})",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Successful Config Writer Tasks Per Workload",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisGridShow": true,
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 93
+          },
+          "id": 29,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "horizontal",
+            "showValue": "always",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xField": "Time",
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 200
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count by (workload) (tekton_task_run_status{component=\"config-writer\",type=\"Succeeded\",status=\"False\"})",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Failed Config Writer Tasks Per Workload",
+          "type": "barchart"
+        }
+      ],
+      "title": "Tekton Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 35,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 22
+          },
+          "id": 32,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "carvel_packageinstall_info{namespace=\"tap-install\",type=\"ReconcileSucceeded\",status=\"True\",name=\"grype\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Scanning Package Installation",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "status": true
+                },
+                "indexByName": {},
+                "renameByName": {
+                  "Time": "",
+                  "name": "Package Install Name",
+                  "package_name": "Package Name",
+                  "package_version": "Package Version",
+                  "type": "Status"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 29
+          },
+          "id": 33,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "scst_source_scan_status{}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Source Scan Results Per Workload",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 37
+          },
+          "id": 34,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "scst_image_scan_status{}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Image Scan Results Per Workload",
+          "type": "table"
+        }
+      ],
+      "title": "Scanning Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 38,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 159
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ready"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 92
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "displayName"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 259
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "source_bundle"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 671
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "name"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 285
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "status_message"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 666
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Status Message"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 1680
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 153
+          },
+          "id": 36,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "accelerator_info{ready=\"true\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Accelerators",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "created_at": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "source_bundle": true,
+                  "source_bundle_secret": true,
+                  "status_message": false
+                },
+                "indexByName": {
+                  "Time": 19,
+                  "Value": 18,
+                  "__name__": 0,
+                  "container": 1,
+                  "created_at": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "displayName": 6,
+                  "endpoint": 7,
+                  "instance": 8,
+                  "job": 9,
+                  "name": 10,
+                  "namespace": 11,
+                  "pod": 12,
+                  "ready": 13,
+                  "service": 14,
+                  "source_bundle": 15,
+                  "source_bundle_secret": 16,
+                  "status_message": 17
+                },
+                "renameByName": {
+                  "Time": "",
+                  "displayName": "Display Name",
+                  "name": "Kubernetes Resource Name",
+                  "namespace": "Namespace",
+                  "ready": "Ready",
+                  "status_message": "Status Message"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 159
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ready"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 92
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "displayName"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 259
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "source_bundle"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 671
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "name"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 285
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "status_message"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 666
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Status Message"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 1680
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 263
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 161
+          },
+          "id": 37,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "accelerator_fragment_info{ready=\"true\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Fragments",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": false,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "created_at": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "pod": true,
+                  "service": true,
+                  "source_bundle": true,
+                  "source_bundle_secret": true,
+                  "status_message": false
+                },
+                "indexByName": {
+                  "Time": 19,
+                  "Value": 18,
+                  "__name__": 0,
+                  "container": 1,
+                  "created_at": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "displayName": 6,
+                  "endpoint": 7,
+                  "instance": 8,
+                  "job": 9,
+                  "name": 10,
+                  "namespace": 11,
+                  "pod": 12,
+                  "ready": 13,
+                  "service": 14,
+                  "source_bundle": 15,
+                  "source_bundle_secret": 16,
+                  "status_message": 17
+                },
+                "renameByName": {
+                  "Time": "",
+                  "displayName": "Display Name",
+                  "name": "Fragment Name",
+                  "namespace": "Namespace",
+                  "ready": "Ready",
+                  "status_message": "Status Message"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "title": "Accelerators",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 43,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Name"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 205
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Namespace"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 175
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "External URL"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 429
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Latest Ready Revision"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 231
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Internal URL"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 386
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 25
+          },
+          "id": 39,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "knative_service_info{}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Knative Services",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "container_port": true,
+                  "created_at": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "job": true,
+                  "latest_created_revision": true,
+                  "pod": true,
+                  "run_as_user": true,
+                  "service": true,
+                  "service_account": true,
+                  "timeout_seconds": true,
+                  "workload": true
+                },
+                "indexByName": {
+                  "Time": 0,
+                  "Value": 24,
+                  "__name__": 1,
+                  "container": 2,
+                  "container_port": 3,
+                  "created_at": 4,
+                  "customresource_group": 5,
+                  "customresource_kind": 6,
+                  "customresource_version": 7,
+                  "endpoint": 10,
+                  "external_url": 11,
+                  "instance": 12,
+                  "internal_url": 13,
+                  "job": 14,
+                  "latest_created_revision": 15,
+                  "latest_ready_revision": 16,
+                  "name": 8,
+                  "namespace": 9,
+                  "pod": 17,
+                  "run_as_user": 18,
+                  "service": 19,
+                  "service_account": 20,
+                  "timeout_seconds": 21,
+                  "workload": 22,
+                  "workload_image": 23
+                },
+                "renameByName": {
+                  "external_url": "External URL",
+                  "internal_url": "Internal URL",
+                  "latest_ready_revision": "Latest Ready Revision",
+                  "name": "Name",
+                  "namespace": "Namespace",
+                  "workload_image": "Running Image"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 32
+          },
+          "id": 40,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "knative_service_status{status=\"False\",type=\"Ready\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Knative Services in Bad State",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 39
+          },
+          "id": 42,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "expr": "knative_service_info unless ignoring(dst) (label_replace(knative_service_info, \"dst\", \"$1\", \"latest_created_revision\", \"(.*)\") == label_replace(knative_service_info, \"dst\", \"$1\", \"latest_ready_revision\", \"(.*)\"))",
+              "format": "table",
+              "instant": false,
+              "legendFormat": "{{workload}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Knative Services With Latest Revision Not Ready",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 45
+          },
+          "id": 41,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "knative_revision_status{status=\"False\",type=\"Ready\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{workload}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Failed Knative Revisions",
+          "type": "table"
+        }
+      ],
+      "title": "Knative Services",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 47,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 24,
+            "x": 0,
+            "y": 17
+          },
+          "id": 44,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "cartographer_deliverable_status{type=\"Ready\",status=\"False\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Deliverables in Failed State",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "has_tests": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": false,
+                  "pod": true,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 0,
+                  "Value": 18,
+                  "__name__": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "has_tests": 7,
+                  "instance": 8,
+                  "job": 9,
+                  "last_transition_ime": 19,
+                  "message": 13,
+                  "name": 10,
+                  "namespace": 11,
+                  "pod": 14,
+                  "reason": 12,
+                  "service": 15,
+                  "status": 16,
+                  "type": 17
+                },
+                "renameByName": {
+                  "last_transition_ime": "Last Sync Time",
+                  "message": "Message",
+                  "name": "Name",
+                  "namespace": "Namespace",
+                  "reason": "Failure Reason"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 7,
+            "x": 0,
+            "y": 22
+          },
+          "id": 45,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "cartographer_deliverable_status{type=\"Ready\",status=\"True\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Deliverables in Successful State",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "has_tests": true,
+                  "instance": true,
+                  "job": true,
+                  "last_transition_ime": false,
+                  "pod": true,
+                  "reason": true,
+                  "service": true,
+                  "status": true,
+                  "type": true
+                },
+                "indexByName": {
+                  "Time": 0,
+                  "Value": 18,
+                  "__name__": 1,
+                  "container": 2,
+                  "customresource_group": 3,
+                  "customresource_kind": 4,
+                  "customresource_version": 5,
+                  "endpoint": 6,
+                  "has_tests": 7,
+                  "instance": 8,
+                  "job": 9,
+                  "last_transition_ime": 19,
+                  "message": 13,
+                  "name": 10,
+                  "namespace": 11,
+                  "pod": 14,
+                  "reason": 12,
+                  "service": 15,
+                  "status": 16,
+                  "type": 17
+                },
+                "renameByName": {
+                  "last_transition_ime": "Last Sync Time",
+                  "message": "Message",
+                  "name": "Name",
+                  "namespace": "Namespace",
+                  "reason": "Failure Reason"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "Value #A"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Value #A"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Git Sourced Deliverables"
+                  },
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-blue",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Value #B"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "OCI Sourced Deliverables"
+                  },
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-red",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 17,
+            "x": 7,
+            "y": 22
+          },
+          "id": 46,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "right",
+              "showLegend": true,
+              "sortBy": "Name",
+              "sortDesc": true
+            },
+            "orientation": "horizontal",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xField": "Time",
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": -200
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "disableTextWrap": false,
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count(cartographer_deliverable_info{source_image=\"\"})",
+              "format": "table",
+              "fullMetaSearch": false,
+              "includeNullMetadata": true,
+              "instant": true,
+              "interval": "",
+              "legendFormat": "__auto",
+              "range": false,
+              "refId": "A",
+              "useBackend": false
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "count(cartographer_deliverable_info{source_git_url=\"\"})",
+              "format": "table",
+              "hide": false,
+              "instant": true,
+              "legendFormat": "__auto",
+              "range": false,
+              "refId": "B"
+            }
+          ],
+          "title": "Number of Deliverables Per Source Type",
+          "transformations": [],
+          "type": "barchart"
+        }
+      ],
+      "title": "Deliverables",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 49,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "instance_type_api_group"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 305
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 1
+          },
+          "id": 48,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "10.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "stk_cluster_instance_class_status{type=\"Ready\",status=\"True\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{name}}",
+              "range": false,
+              "refId": "A"
+            }
+          ],
+          "title": "Cluster Instance Classes",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true,
+                  "__name__": true,
+                  "container": true,
+                  "customresource_group": true,
+                  "customresource_kind": true,
+                  "customresource_version": true,
+                  "endpoint": true,
+                  "instance": true,
+                  "instance_type_api_group": true,
+                  "instance_type_api_version": true,
+                  "job": true,
+                  "last_transition_ime": false,
+                  "namespace": true,
+                  "pod": true,
+                  "service": true,
+                  "status": false,
+                  "type": true,
+                  "xrd": true
+                },
+                "indexByName": {
+                  "Time": 21,
+                  "Value": 20,
+                  "__name__": 0,
+                  "container": 1,
+                  "customresource_group": 2,
+                  "customresource_kind": 3,
+                  "customresource_version": 4,
+                  "endpoint": 5,
+                  "instance": 6,
+                  "instance_type_api_group": 7,
+                  "instance_type_api_version": 8,
+                  "instance_type_kind": 10,
+                  "job": 11,
+                  "last_transition_ime": 12,
+                  "name": 9,
+                  "namespace": 13,
+                  "pod": 14,
+                  "reason": 15,
+                  "service": 16,
+                  "status": 17,
+                  "type": 18,
+                  "xrd": 19
+                },
+                "renameByName": {
+                  "instance_type_kind": "Instance Kind",
+                  "last_transition_ime": "Last Sync Time",
+                  "name": "Name",
+                  "reason": "Reason",
+                  "status": "Status"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "title": "Service Bindings",
+      "type": "row"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "TAP monitoring Copy",
+  "uid": "aef01766-5b90-4d03-b47a-441d079855d9",
+  "version": 5,
+  "weekStart": ""
+}
